@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Custom romantic scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #fff5f7;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #fca5b7;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #fb7185;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 10px 30px -5px rgba(244, 63, 114, 0.12), 0 4px 6px -2px rgba(244, 63, 114, 0.04);
+  }
+
+  .glass-pill {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(254, 205, 214, 0.6);
+    box-shadow: 0 8px 24px -4px rgba(244, 63, 114, 0.15);
+  }
+
+  .parchment-texture {
+    background-color: #fdfbf7;
+    background-image: radial-gradient(#edd3c4 0.75px, transparent 0.75px), radial-gradient(#edd3c4 0.75px, #fdfbf7 0.75px);
+    background-size: 30px 30px;
+    background-position: 0 0, 15px 15px;
+  }
+
+  .text-glow-rose {
+    text-shadow: 0 0 20px rgba(244, 63, 114, 0.35);
+  }
+
+  .shadow-soft-rose {
+    box-shadow: 0 12px 35px -8px rgba(244, 63, 114, 0.22);
+  }
+}
