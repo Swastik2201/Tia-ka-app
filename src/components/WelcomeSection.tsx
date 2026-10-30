@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Heart, CalendarHeart, Clock, Sparkles, Infinity, ChevronDown } from 'lucide-react';
+import { Heart, CalendarHeart, Clock, Sparkles, Infinity as InfinityIcon, ChevronDown } from 'lucide-react';
 import { AnniversaryData } from '../data/anniversaryData';
 
 interface WelcomeSectionProps {
@@ -12,7 +12,7 @@ const iconMap: Record<string, React.ReactNode> = {
   CalendarHeart: <CalendarHeart className="w-5 h-5 text-rose-500" />,
   Clock: <Clock className="w-5 h-5 text-rose-500" />,
   Sparkles: <Sparkles className="w-5 h-5 text-rose-500" />,
-  Infinity: <Infinity className="w-5 h-5 text-rose-500" />,
+  Infinity: <InfinityIcon className="w-5 h-5 text-rose-500" />,
 };
 
 export const WelcomeSection: React.FC<WelcomeSectionProps> = ({ data, onExplore }) => {
@@ -96,15 +96,31 @@ export const WelcomeSection: React.FC<WelcomeSectionProps> = ({ data, onExplore 
           transition={{ duration: 0.8, delay: 0.8 }}
           className="flex flex-col sm:flex-row items-center gap-4"
         >
-          <button
-            id="open-story-button"
-            onClick={onExplore}
-            className="group relative inline-flex items-center gap-3 px-8 py-4 rounded-full font-serif font-semibold text-base sm:text-lg text-white bg-gradient-to-r from-rose-500 via-pink-500 to-rose-600 shadow-romantic-lg hover:shadow-rose-400/50 hover:scale-105 transition-all duration-300 active:scale-95"
-          >
-            <span>Open Our Story</span>
-            <span className="text-xl transition-transform group-hover:rotate-12 duration-300">💌</span>
-            <div className="absolute inset-0 rounded-full bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300 pointer-events-none" />
-          </button>
+          <div className="relative">
+            {/* Animated pulsating halo ring */}
+            <motion.div
+              animate={{
+                scale: [1, 1.08, 1],
+                opacity: [0.5, 0.9, 0.5],
+              }}
+              transition={{
+                duration: 2.2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="absolute -inset-1 rounded-full bg-gradient-to-r from-rose-400 via-pink-400 to-rose-500 blur-md opacity-70 pointer-events-none"
+            />
+            
+            <button
+              id="open-story-button"
+              onClick={onExplore}
+              className="group relative inline-flex items-center gap-3 px-8 py-4 rounded-full font-serif font-semibold text-base sm:text-lg text-white bg-gradient-to-r from-rose-500 via-pink-500 to-rose-600 shadow-romantic-lg hover:shadow-rose-400/50 hover:scale-105 transition-all duration-300 active:scale-95"
+            >
+              <span>Open Our Story</span>
+              <span className="text-xl transition-transform group-hover:rotate-12 duration-300">💌</span>
+              <div className="absolute inset-0 rounded-full bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300 pointer-events-none" />
+            </button>
+          </div>
         </motion.div>
       </div>
 
