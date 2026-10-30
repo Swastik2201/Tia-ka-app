@@ -3,7 +3,7 @@ export interface MemoryPhoto {
   url: string;
   title: string;
   caption: string;
-  date: string;
+  date?: string;
   location?: string;
   aspect?: 'tall' | 'wide' | 'square';
 }
@@ -19,8 +19,8 @@ export interface AnniversaryData {
   partnerName: string;
   yourName: string;
   milestoneTitle: string;
-  anniversaryDate: string;
-  startDate: string; // YYYY-MM-DD
+  anniversaryDate?: string;
+  startDate?: string;
   heroGreeting: string;
   heroSubtext: string;
   metrics: MilestoneMetric[];
@@ -30,7 +30,7 @@ export interface AnniversaryData {
     paragraphs: string[];
     signOff: string;
     signature: string;
-    date: string;
+    date?: string;
   };
 }
 
@@ -38,8 +38,6 @@ export const anniversaryData: AnniversaryData = {
   partnerName: "Tia",
   yourName: "Swastik",
   milestoneTitle: "365 Days of Loving You",
-  anniversaryDate: "October 30",
-  startDate: "2023-10-30",
   heroGreeting: "Happy 1st Anniversary, My Love ❤️",
   heroSubtext: "Every single second of this past year with you has been my favorite adventure. Here is to 365 days of smiles, late night talks, inside jokes, and endless warmth.",
   
@@ -73,57 +71,35 @@ export const anniversaryData: AnniversaryData = {
   photos: [
     {
       id: "photo-1",
-      url: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1200&q=80",
-      title: "Where It All Began",
-      caption: "Our very first coffee date. I remember being so nervous, but the moment you smiled, everything felt like home.",
-      date: "October 30, 2023",
-      location: "Our Favorite Little Cafe",
-      aspect: "wide"
+      url: "/images/photo-1.jpg",
+      title: "The Warmest Hugs",
+      caption: "Tucked away together, smiling without a care in the world. Being with you always feels like the safest, happiest place.",
+      location: "In Our Little Bubble",
+      aspect: "tall"
     },
     {
       id: "photo-2",
-      url: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1200&q=80",
-      title: "Golden Hour Strolls",
-      caption: "Walking hand in hand as the sun melted into the horizon. Time always seems to pause whenever I am with you.",
-      date: "December 14, 2023",
-      location: "Sunset Promenade",
-      aspect: "tall"
+      url: "/images/photo-2.jpg",
+      title: "Seaside Adventures",
+      caption: "Silly faces, ocean breeze in our hair, and endless laughter. With you, even the simplest walk becomes my absolute favorite memory.",
+      location: "By The Water",
+      aspect: "square"
     },
     {
       id: "photo-3",
-      url: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=1200&q=80",
-      title: "Pure Joy & Laughter",
-      caption: "One of those moments where we couldn't stop giggling at something silly. Your laugh is still my absolute favorite melody.",
-      date: "February 14, 2024",
-      location: "Valentine's Weekend Getaway",
-      aspect: "square"
-    },
-    {
-      id: "photo-4",
-      url: "https://images.unsplash.com/photo-1494774157365-9e04c6720e47?auto=format&fit=crop&w=1200&q=80",
-      title: "Cozy Rainy Afternoon",
-      caption: "Wrapped in blankets, warm chai in hand, watching raindrops trace the window pane. Perfect simple peace.",
-      date: "April 22, 2024",
-      location: "Cozy Living Room",
+      url: "/images/photo-3.jpg",
+      title: "Partners In Crime",
+      caption: "Our classic mirror moment. The prettiest girl in the world right by my side, making every ordinary second feel extraordinary.",
+      location: "Moments Before Heading Out",
       aspect: "tall"
     },
     {
-      id: "photo-5",
-      url: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=1200&q=80",
-      title: "Underneath the Stars",
-      caption: "Looking up at a sky full of stars, knowing the brightest star was right next to me holding my jacket.",
-      date: "July 19, 2024",
-      location: "Hilltop Overlook",
-      aspect: "wide"
-    },
-    {
-      id: "photo-6",
-      url: "https://images.unsplash.com/photo-1474552226712-ac0f0961a954?auto=format&fit=crop&w=1200&q=80",
-      title: "365 Days Later...",
-      caption: "A whole year later, and I still fall deeper in love with you each day. Thank you for being my anchor, my muse, and my favorite person.",
-      date: "October 30, 2024",
-      location: "Right Here, Forever",
-      aspect: "square"
+      id: "photo-4",
+      url: "/images/photo-4.jpg",
+      title: "Dressed Up & Celebrating",
+      caption: "Looking our absolute best, but more importantly, looking at you in awe. You shine brighter than anything, always.",
+      location: "Together & Celebrating",
+      aspect: "tall"
     }
   ],
 
@@ -136,7 +112,6 @@ export const anniversaryData: AnniversaryData = {
       "Here is to our first 365 days of endless memories, and to all the unwritten adventures waiting for us in the years to come. I promise to keep making you smile, to stand beside you in all seasons, and to love you even more tomorrow than I do today."
     ],
     signOff: "Forever & Always Yours,",
-    signature: "Swastik ❤️",
-    date: "October 30, 2024"
+    signature: "Swastik ❤️"
   }
 };

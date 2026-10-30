@@ -48,10 +48,10 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({ photos }) => {
       </div>
 
       {/* Responsive Masonry / Polaroid Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {photos.map((photo, index) => {
           // Subtle alternating rotation angle for authentic polaroid look
-          const tilts = [-1.5, 1.2, -0.8, 1.6, -1.2, 0.9];
+          const tilts = [-1.5, 1.2, -0.8, 1.6];
           const tilt = tilts[index % tilts.length];
 
           return (
@@ -60,7 +60,7 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({ photos }) => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: (index % 3) * 0.15 }}
+              transition={{ duration: 0.6, delay: (index % 4) * 0.12 }}
               whileHover={{ 
                 scale: 1.03, 
                 rotate: 0, 
@@ -72,14 +72,14 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({ photos }) => {
               className="group cursor-pointer bg-white p-3.5 pb-6 rounded-2xl shadow-polaroid border border-rose-100/80 transition-shadow duration-300 hover:shadow-romantic-lg flex flex-col justify-between"
             >
               {/* Photo Image Frame */}
-              <div className="relative w-full overflow-hidden rounded-xl bg-rose-50 aspect-[4/3] sm:aspect-square mb-4">
+              <div className="relative w-full overflow-hidden rounded-xl bg-rose-50 aspect-[4/5] mb-4">
                 <img
                   src={photo.url}
                   alt={photo.title}
                   loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                   onError={(e) => {
-                    (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1200&q=80";
+                    (e.target as HTMLImageElement).src = "/images/photo-1.jpg";
                   }}
                 />
 
@@ -91,11 +91,13 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({ photos }) => {
                   </div>
                 </div>
 
-                {/* Date Tag */}
-                <div className="absolute bottom-2.5 left-2.5 px-2.5 py-1 rounded-md bg-black/40 backdrop-blur-sm text-white text-[11px] font-medium flex items-center gap-1">
-                  <Calendar className="w-3 h-3 text-rose-300" />
-                  <span>{photo.date}</span>
-                </div>
+                {/* Date Tag - Only if explicitly provided */}
+                {photo.date && (
+                  <div className="absolute bottom-2.5 left-2.5 px-2.5 py-1 rounded-md bg-black/40 backdrop-blur-sm text-white text-[11px] font-medium flex items-center gap-1">
+                    <Calendar className="w-3 h-3 text-rose-300" />
+                    <span>{photo.date}</span>
+                  </div>
+                )}
               </div>
 
               {/* Polaroid Bottom Caption area */}

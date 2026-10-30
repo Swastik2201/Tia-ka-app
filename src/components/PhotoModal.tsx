@@ -83,7 +83,7 @@ export const PhotoModal: React.FC<PhotoModalProps> = ({
                 alt={photo.title}
                 className="max-h-[60vh] w-auto max-w-full object-contain mx-auto select-none"
                 onError={(e) => {
-                  (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1200&q=80";
+                  (e.target as HTMLImageElement).src = "/images/photo-1.jpg";
                 }}
               />
 
@@ -115,10 +115,12 @@ export const PhotoModal: React.FC<PhotoModalProps> = ({
                   {photo.title}
                 </h3>
                 <div className="flex items-center gap-3 text-xs text-gray-500">
-                  <span className="flex items-center gap-1">
-                    <Calendar className="w-3.5 h-3.5 text-rose-500" />
-                    {photo.date}
-                  </span>
+                  {photo.date && (
+                    <span className="flex items-center gap-1">
+                      <Calendar className="w-3.5 h-3.5 text-rose-500" />
+                      {photo.date}
+                    </span>
+                  )}
                   {photo.location && (
                     <span className="flex items-center gap-1">
                       <MapPin className="w-3.5 h-3.5 text-rose-500" />

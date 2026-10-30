@@ -31,8 +31,12 @@ export const WelcomeSection: React.FC<WelcomeSectionProps> = ({ data, onExplore 
         >
           <Heart className="w-3.5 h-3.5 fill-rose-500 text-rose-500 animate-pulse" />
           <span>{data.milestoneTitle}</span>
-          <span className="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
-          <span className="lowercase font-normal text-rose-600">{data.anniversaryDate}</span>
+          {data.anniversaryDate && (
+            <>
+              <span className="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
+              <span className="lowercase font-normal text-rose-600">{data.anniversaryDate}</span>
+            </>
+          )}
         </motion.div>
 
         {/* Hero Greeting */}

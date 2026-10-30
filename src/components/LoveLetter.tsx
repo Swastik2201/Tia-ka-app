@@ -92,7 +92,7 @@ export const LoveLetter: React.FC<LoveLetterProps> = ({ letterData, partnerName 
                 For My Dearest {partnerName}
               </h3>
               <p className="text-sm text-gray-500 mb-6">
-                Sealed with all my love on {letterData.date}
+                {letterData.date ? `Sealed with all my love on ${letterData.date}` : "Sealed with all my love"}
               </p>
 
               <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-rose-500 text-white font-medium text-sm shadow-md group-hover:bg-rose-600 transition-colors">
@@ -115,9 +115,11 @@ export const LoveLetter: React.FC<LoveLetterProps> = ({ letterData, partnerName 
               </div>
 
               {/* Date Header */}
-              <div className="text-right text-xs font-serif text-gray-600 italic mb-8">
-                {letterData.date}
-              </div>
+              {letterData.date && (
+                <div className="text-right text-xs font-serif text-gray-600 italic mb-8">
+                  {letterData.date}
+                </div>
+              )}
 
               {/* Greeting */}
               <h3 className="font-cursive text-4xl sm:text-5xl text-rose-700 font-normal mb-8">
