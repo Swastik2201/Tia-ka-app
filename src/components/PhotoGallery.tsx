@@ -125,16 +125,14 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({ photos }) => {
       </div>
 
       {/* Lightbox Modal */}
-      {selectedPhotoIndex !== null && (
-        <PhotoModal
-          photo={photos[selectedPhotoIndex]}
-          currentIndex={selectedPhotoIndex}
-          totalPhotos={photos.length}
-          onClose={closeLightbox}
-          onNext={showNextPhoto}
-          onPrev={showPrevPhoto}
-        />
-      )}
+      <PhotoModal
+        photo={selectedPhotoIndex !== null ? photos[selectedPhotoIndex] : null}
+        currentIndex={selectedPhotoIndex ?? 0}
+        totalPhotos={photos.length}
+        onClose={closeLightbox}
+        onNext={showNextPhoto}
+        onPrev={showPrevPhoto}
+      />
     </section>
   );
 };

@@ -124,13 +124,23 @@ export const LoveLetter: React.FC<LoveLetterProps> = ({ letterData, partnerName 
                 {letterData.greeting}
               </h3>
 
+              {/* Decorative Opening Quotation Mark */}
+              <div className="text-rose-200 font-serif text-6xl sm:text-7xl leading-none select-none -mb-3 opacity-70">
+                “
+              </div>
+
               {/* Letter Paragraphs */}
-              <div className="space-y-6 text-gray-700 font-serif text-base sm:text-lg leading-relaxed">
+              <div className="space-y-6 text-gray-700 font-serif text-base sm:text-lg leading-relaxed relative z-10 pl-2">
                 {letterData.paragraphs.map((p, idx) => (
                   <p key={idx} className="first-letter:text-2xl first-letter:font-bold first-letter:text-rose-600">
                     {p}
                   </p>
                 ))}
+              </div>
+
+              {/* Decorative Closing Quotation Mark */}
+              <div className="text-right text-rose-200 font-serif text-6xl sm:text-7xl leading-none select-none -mt-3 opacity-70 pr-2">
+                ”
               </div>
 
               {/* Sign-off & Handwritten Signature */}
