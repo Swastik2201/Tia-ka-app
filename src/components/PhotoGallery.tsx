@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, MapPin, ZoomIn, Heart, Sparkles } from 'lucide-react';
+import { Calendar, ZoomIn, Heart, Sparkles } from 'lucide-react';
 import { MemoryPhoto } from '../data/anniversaryData';
 import { PhotoModal } from './PhotoModal';
 
@@ -113,13 +113,6 @@ export const PhotoGallery: React.FC<PhotoGalleryProps> = ({ photos }) => {
                     {photo.caption}
                   </p>
                 </div>
-
-                {photo.location && (
-                  <div className="mt-3 pt-2.5 border-t border-rose-50 flex items-center text-[11px] text-gray-600">
-                    <MapPin className="w-3 h-3 text-rose-400 mr-1 flex-shrink-0" />
-                    <span className="truncate">{photo.location}</span>
-                  </div>
-                )}
               </div>
             </motion.div>
           );

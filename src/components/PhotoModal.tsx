@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ChevronLeft, ChevronRight, Calendar, MapPin, Heart } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, Calendar, Heart } from 'lucide-react';
 import { MemoryPhoto } from '../data/anniversaryData';
 
 interface PhotoModalProps {
@@ -114,20 +114,14 @@ export const PhotoModal: React.FC<PhotoModalProps> = ({
                 <h3 className="font-serif text-xl sm:text-2xl font-bold text-gray-900">
                   {photo.title}
                 </h3>
-                <div className="flex items-center gap-3 text-xs text-gray-500">
-                  {photo.date && (
+                {photo.date && (
+                  <div className="flex items-center gap-3 text-xs text-gray-500">
                     <span className="flex items-center gap-1">
                       <Calendar className="w-3.5 h-3.5 text-rose-500" />
                       {photo.date}
                     </span>
-                  )}
-                  {photo.location && (
-                    <span className="flex items-center gap-1">
-                      <MapPin className="w-3.5 h-3.5 text-rose-500" />
-                      {photo.location}
-                    </span>
-                  )}
-                </div>
+                  </div>
+                )}
               </div>
 
               <p className="text-gray-700 text-sm sm:text-base leading-relaxed">

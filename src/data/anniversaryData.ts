@@ -74,7 +74,6 @@ export const anniversaryData: AnniversaryData = {
       url: "/images/photo-1.jpg",
       title: "The Warmest Hugs",
       caption: "Tucked away together, smiling without a care in the world. Being with you always feels like the safest, happiest place.",
-      location: "In Our Little Bubble",
       aspect: "tall"
     },
     {
@@ -82,7 +81,6 @@ export const anniversaryData: AnniversaryData = {
       url: "/images/photo-2.jpg",
       title: "Seaside Adventures",
       caption: "Silly faces, ocean breeze in our hair, and endless laughter. With you, even the simplest walk becomes my absolute favorite memory.",
-      location: "By The Water",
       aspect: "square"
     },
     {
@@ -90,7 +88,6 @@ export const anniversaryData: AnniversaryData = {
       url: "/images/photo-3.jpg",
       title: "Partners In Crime",
       caption: "Our classic mirror moment. The prettiest girl in the world right by my side, making every ordinary second feel extraordinary.",
-      location: "Moments Before Heading Out",
       aspect: "tall"
     },
     {
@@ -98,7 +95,6 @@ export const anniversaryData: AnniversaryData = {
       url: "/images/photo-4.jpg",
       title: "Dressed Up & Celebrating",
       caption: "Looking our absolute best, but more importantly, looking at you in awe. You shine brighter than anything, always.",
-      location: "Together & Celebrating",
       aspect: "tall"
     }
   ],
