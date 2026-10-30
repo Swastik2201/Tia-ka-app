@@ -134,7 +134,14 @@ export const LoveLetter: React.FC<LoveLetterProps> = ({ letterData, partnerName 
               {/* Letter Paragraphs */}
               <div className="space-y-6 text-gray-700 font-serif text-base sm:text-lg leading-relaxed relative z-10 pl-2">
                 {letterData.paragraphs.map((p, idx) => (
-                  <p key={idx} className="first-letter:text-2xl first-letter:font-bold first-letter:text-rose-600">
+                  <p
+                    key={idx}
+                    className={
+                      idx === 0
+                        ? "first-letter:text-3xl first-letter:font-bold first-letter:text-rose-600 first-letter:mr-0.5"
+                        : ""
+                    }
+                  >
                     {p}
                   </p>
                 ))}

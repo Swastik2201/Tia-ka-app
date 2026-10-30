@@ -102,10 +102,11 @@ export const anniversaryData: AnniversaryData = {
   letter: {
     greeting: "Dearest Tia,",
     paragraphs: [
-      "Can you believe it has already been a whole year? 365 days ago, our paths crossed in a way that forever changed the melody of my life. From our very first conversations to our spontaneous late-night adventures, every single chapter we've written together has been nothing short of magical.",
-      "Thank you for being my constant source of warmth and sunshine. Your kindness, your infectious laugh, the gentle way you understand me without a single word, and the gentle comfort of your hand in mine—these are the gifts I cherish every single day.",
-      "Life with you is softer, brighter, and filled with so much color. Through every quiet morning, every busy afternoon, and every starry night, loving you has been the easiest and most beautiful choice I have ever made.",
-      "Here is to our first 365 days of endless memories, and to all the unwritten adventures waiting for us in the years to come. I promise to keep making you smile, to stand beside you in all seasons, and to love you even more tomorrow than I do today."
+      "Honestly, I never thought that we would end up dating anyway, but here we are after a year and to be honest, it has been a heck of a journey with you. I have always thought that you are too pretty for me and which is true of course. I am so grateful that you have come into my life because I feel like I have matured a lot and grown as a person.",
+      "I have always felt like a sense of calmness around you and you know I can be myself around you. I don't know if you feel the same way but I hope that I can make you feel that way soon.",
+      "I know that I haven't been the best boyfriend and to be honest I have been far from it, but I am learning everyday.",
+      "Thank You again for being there for me everytime I wanted to have someone to talk to and Thank You for being my Peace.",
+      "I know that we come up with some disagreements but I want to solve them with you than with anyone else and I know that we will."
     ],
     signOff: "Forever & Always Yours,",
     signature: "Swastik ❤️"
